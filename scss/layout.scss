@@ -1,0 +1,231 @@
+@import "vars";
+@import "mixins";
+
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Lexend", "Noto Sans KR", sans-serif;
+  color: $text-color;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+.hidden {
+  display: none;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+  color: $white-color;
+  &:hover {
+    background-color: $white-color;
+    color: $text-color;
+    #logo a {
+      .color {
+        display: block;
+      }
+      .white {
+        display: none;
+      }
+    }
+  }
+  #logo {
+    position: absolute;
+    left: 50px;
+    a {
+      display: flex;
+      height: 100px;
+      align-items: center;
+      .color {
+        display: none;
+      }
+    }
+  }
+  #gnb {
+    .list {
+      display: flex;
+      justify-content: center;
+      > li {
+        &:hover {
+          > a {
+            color: $hover-color;
+            &:after {
+              transform: scaleX(1);
+            }
+          }
+          .depth02 {
+            display: flex;
+          }
+        }
+        > a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100px;
+          padding: 0 50px;
+          font-size: $medium-size;
+          font-weight: 500;
+          position: relative;
+          transition: 0.25s ease;
+          &:after {
+            @include pseudo();
+            left: 50px;
+            right: 50px;
+            height: 3px;
+            background-color: $main-color;
+            top: 65px;
+            transform: scaleX(0);
+            transform-origin: 50% 50%;
+            transition: 0.25s ease;
+          }
+        }
+        .depth02 {
+          background-color: $light-gray-color;
+          display: none;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          left: 0;
+          li {
+            &:hover {
+              a {
+                color: $hover-color;
+              }
+            }
+            a {
+              display: flex;
+              height: 60px;
+              padding: 0 30px;
+              justify-content: center;
+              align-items: center;
+              transition: 0.25s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+  .etc {
+    position: absolute;
+    right: 50px;
+    top: 0;
+    display: flex;
+    height: 100px;
+    align-items: center;
+    .item:hover {
+      button {
+        background-color: #fff;
+        border: 1px solid #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        color: $hover-color;
+      }
+      ul {
+        margin-top: -5px;
+        display: block;
+        border: 1px solid #eee;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        li:hover {
+          color: $hover-color;
+        }
+      }
+    }
+    button {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      width: 80px;
+      height: 50px;
+      border-bottom: none;
+      border-radius: 5px 5px 0 0;
+      cursor: pointer;
+      position: relative;
+    }
+    ul {
+      background-color: $white-color;
+      display: none;
+      position: absolute;
+      padding: 20px;
+      transition: 0.25s ease;
+      border-radius: 0 0 5px 5px;
+      &:before {
+        content: "";
+        display: block;
+        width: 78px;
+        height: 5px;
+        background-color: #fff;
+        position: absolute;
+        left: 0;
+        top: -2px;
+      }
+      li {
+        a {
+          display: block;
+          min-width: 80px;
+        }
+      }
+      //transition: 0.25s ease;
+    }
+    .sns {
+      li {
+        &:nth-child(1):hover a:before {
+          background-position: 0 -50px;
+        }
+        &:nth-child(2):hover a:before {
+          background-position: -50px -50px;
+        }
+        &:nth-child(3):hover a:before {
+          background-position: -100px -50px;
+        }
+        &:nth-child(4):hover a:before {
+          background-position: -150px -50px;
+        }
+        &:nth-child(5):hover a:before {
+          background-position: -200px -50px;
+        }
+
+        a {
+          display: block;
+          padding: 10px 0 10px 30px;
+          font-size: 1.4rem;
+          position: relative;
+          &:before {
+            @include pseudo();
+            @include box(32px, 18px);
+            left: 0;
+            background-image: url("../images/layout/utility.png");
+          }
+        }
+        &:nth-child(1) a:before {
+          background-position: 0 0;
+        }
+        &:nth-child(2) a:before {
+          background-position: -50px 0;
+        }
+        &:nth-child(3) a:before {
+          background-position: -100px 0;
+        }
+        &:nth-child(4) a:before {
+          background-position: -150px 0;
+        }
+        &:nth-child(5) a:before {
+          background-position: -200px 0;
+        }
+      }
+    }
+    .language ul {
+      padding: 20px 0;
+      li a {
+        padding: 10px 0 10px 30px;
+      }
+    }
+  }
+}
