@@ -34,3 +34,9 @@
   $shadow: unquote($shadow);
   text-shadow: $shadow;
 }
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
