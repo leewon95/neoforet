@@ -7,11 +7,19 @@
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
 }
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 @mixin pseudo($display: block, $position: absolute) {
   content: "";
   display: $display;
   position: $position;
 }
+
 @mixin box($width, $height: $width) {
   width: $width;
   height: $height;
