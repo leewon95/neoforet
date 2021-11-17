@@ -43,7 +43,6 @@
     border: none;
     width: calc(40 / 90 * 100%);
     appearance: none;
-    position: relative;
     background: url(../images/commom/expand_more_black_24dp.svg) right 20px top
       50% no-repeat;
     outline: none;
@@ -225,6 +224,68 @@
         line-height: 1.5;
         p {
           margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+.infoBox {
+  .list01 {
+    margin-top: 100px;
+    > li {
+      border-right: none;
+      border-bottom: none;
+      &:last-child {
+        border-right: 3px solid $light-gray-color;
+      }
+    }
+  }
+  .list02 {
+    > li {
+      border-right: none;
+      &:last-child {
+        border-right: 3px solid $light-gray-color;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    li {
+      width: 33.33%;
+      border: 3px solid $light-gray-color;
+      padding: 30px 30px;
+      height: 200px;
+      dt {
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+        position: relative;
+        font-size: $large-size;
+        color: darken($light-gray-color, 20);
+        &::before {
+          content: "";
+          display: block;
+          width: 30px;
+          height: 2px;
+          background-color: $main-color;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+      dd {
+        position: relative;
+        p {
+          padding: 10px 0;
+        }
+        .num {
+          font-size: $large-size;
+          font-weight: 700;
+        }
+        img {
+          position: absolute;
+          right: 0;
+          bottom: 0;
         }
       }
     }

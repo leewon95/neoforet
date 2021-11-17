@@ -8,13 +8,15 @@ button { background: none; border: none; outline: none; }
 
 .hidden { display: none; }
 
-#header { width: 100%; position: fixed; z-index: 99; color: #fff; top: 0; }
+#header { width: 100%; position: fixed; z-index: 99; color: #fff; top: 0; background-color: #fff; }
 
 #header:hover { color: #111111; background-color: #fff; }
 
 #header:hover #logo a .color { display: block; }
 
 #header:hover #logo a .white { display: none; }
+
+#header::before { content: ""; display: block; width: 100%; height: 1px; background-color: #c2c2c2; position: absolute; bottom: 0; }
 
 #header #logo { position: absolute; left: 50px; }
 

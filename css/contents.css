@@ -1,4 +1,4 @@
-#subContentsWrap { margin-top: 160px; padding: 100px 0; }
+#subContentsWrap { margin-top: 160px; padding: 100px 0 50px; }
 
 #subContentsWrap #contents { width: 1440px; margin: 0 auto; }
 
@@ -19,5 +19,3 @@
 .lnb ul li.on a { background-color: #1dcb5d; color: #fff; font-weight: 500; }
 
 .lnb ul li a { display: block; padding: 20px 40px; background-color: #f5f5f5; border-radius: 100px; }
-
-.faqBox { margin-top: 100px; }

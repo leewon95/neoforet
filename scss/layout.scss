@@ -28,6 +28,7 @@ button {
   z-index: 99;
   color: $white-color;
   top: 0;
+  background-color: #fff;
   &:hover {
     color: $text-color;
     background-color: $white-color;
@@ -39,6 +40,15 @@ button {
         display: none;
       }
     }
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: darken($light-gray-color, 20);
+    position: absolute;
+    bottom: 0;
   }
   #logo {
     position: absolute;
